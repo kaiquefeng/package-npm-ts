@@ -7,7 +7,7 @@ Model use for create typecript package in npm public
 Init project using template package-npm-ts:
 
 ```bash
-npx create-pakacge-npm package-name
+npx create-package-npm package-name
 ```
 
 Open project in favorite editor:
