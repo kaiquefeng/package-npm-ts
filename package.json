@@ -1,29 +1,35 @@
 {
   "name": "package-npm-ts",
-  "version": "1.0.4",
+  "version": "1.0.2",
   "description": "",
+  "main": "build/index.js",
+  "types": "build/index.d.ts",
   "repository": {
     "type": "git",
-    "url": "https://github.com/kaiquefeng/package-npm-ts"
-  },
-  "bin": {
-    "create-package-npm": "./bin/create-package-npm.js"
+    "url": ""
   },
   "author": "Kaique Feng",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/kaiquefeng/package-npm-ts/issues"
+    "url": ""
   },
   "homepage": "https://github.com/kaiquefeng/package-npm-ts#README",
+  "files": [
+    "build/**/*"
+  ],
   "scripts": {
     "test": "jest --config jestconfig.json",
     "build": "tsc",
     "format": "prettier --write \"src/**/*.ts\"",
     "lint": "tslint -p tsconfig.json",
+    "prepare": "npm run build",
     "prepublishOnly": "npm test && npm run lint",
     "preversion ": "npm run lint",
     "version": "npm run format && git add -A src",
     "postversion": "git push origin main && git push --tags"
+  },
+  "bin": {
+    "create-package-npm": "./bin/create-package-npm.js"
   },
   "devDependencies": {
     "jest": "^28.1.3",
